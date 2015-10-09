@@ -1,0 +1,19 @@
+{
+  "name": "jsproject",
+  "version": "1.0.0",
+  "description": "small js project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexAdamenko/jsproject.git"
+  },
+  "author": "AlexAdamenko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexAdamenko/jsproject/issues"
+  },
+  "homepage": "https://github.com/AlexAdamenko/jsproject#readme"
+}
