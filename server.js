@@ -19,71 +19,48 @@ app.use(bodyParser.json());                                     // parse applica
 app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse application/vnd.api+json as json
 app.use(methodOverride());
 
-// define model =================
-var Todo = mongoose.model('Todo', {
-    text : String
+
+var Visitor = mongoose.model('Visitor', {
+    name : String,
+    date: Date,
+    browserInfo: String
 });
 
-// routes ======================================================================
+app.get('/api/visitors', function(req, res) {
 
-// api ---------------------------------------------------------------------
-// get all todos
-app.get('/api/todos', function(req, res) {
+    Visitor.find(function(err, visitors) {
 
-    // use mongoose to get all todos in the database
-    Todo.find(function(err, todos) {
-
-        // if there is an error retrieving, send the error. nothing after res.send(err) will execute
         if (err)
             res.send(err);
 
-        res.json(todos); // return all todos in JSON format
+        res.json(visitors);
     });
 });
 
-// create todo and send back all todos after creation
-app.post('/api/todos', function(req, res) {
 
-    // create a todo, information comes from AJAX request from Angular
-    Todo.create({
-        text : req.body.text,
-        done : false
-    }, function(err, todo) {
+app.post('/api/visitors', function(req, res) {
+
+            Visitor.create({
+            name : req.body.text,
+            date: req._startTime,
+            browserInfo: req.headers['user-agent']
+
+        }, function(err, visitor) {
         if (err)
-            res.send(err);
-
-        // get and return all the todos after you create another
-        Todo.find(function(err, todos) {
-            if (err)
-                res.send(err)
-            res.json(todos);
-        });
+            res.send(visitors);
     });
 
-});
-
-// delete a todo
-app.delete('/api/todos/:todo_id', function(req, res) {
-    Todo.remove({
-        _id : req.params.todo_id
-    }, function(err, todo) {
+    Visitor.find(function(err, visitors) {
         if (err)
-            res.send(err);
-
-        // get and return all the todos after you create another
-        Todo.find(function(err, todos) {
-            if (err)
-                res.send(err)
-            res.json(todos);
-        });
+            res.send(err)
+        res.json(visitors);
     });
 });
 
-// application -------------------------------------------------------------
 app.get('*', function(req, res) {
-    res.sendfile('./public/index.html'); // load the single view file (angular will handle the page changes on the front-end)
+    res.sendfile('./public/index.html');
 });
 
-// listen (start app with node server.js) ======================================
 app.listen(8080);
 console.log("App listening on port 8080");
+

@@ -7,8 +7,9 @@
     <!-- META -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
-
-    <title>Node/Angular Todo App</title>
+    <script type="text/javascript" src="alphabet.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Enter you name app</title>
 
     <!-- SCROLLS -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
@@ -25,26 +26,12 @@
 
 </head>
 <!-- SET THE CONTROLLER AND GET ALL TODOS -->
-<body ng-controller="mainController">
+<body ng-controller="mainController" class = "mainbody">
 <div class="container">
 
     <!-- HEADER AND TODO COUNT -->
     <div class="jumbotron text-center">
-        <h1>I'm a Todo-aholic <span class="label label-info">{{ todos.length }}</span></h1>
-    </div>
-
-    <!-- TODO LIST -->
-    <div id="todo-list" class="row">
-        <div class="col-sm-4 col-sm-offset-4">
-
-            <!-- LOOP OVER THE TODOS IN $scope.todos -->
-            <div class="checkbox" ng-repeat="todo in todos">
-                <label>
-                    <input type="checkbox" ng-click="deleteTodo(todo._id)"> {{ todo.text }}
-                </label>
-            </div>
-
-        </div>
+        <h1>Enter your name, please</h1>
     </div>
 
     <!-- FORM TO CREATE TODOS -->
@@ -54,14 +41,24 @@
                 <div class="form-group">
 
                     <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
-                    <input type="text" class="form-control input-lg text-center" placeholder="I want to buy a puppy that will love me forever" ng-model="formData.text">
+                    <input type="text" class="form-control input-lg text-center" placeholder="Enter your name here" ng-model="formData.text">
                 </div>
 
                 <!-- createToDo() WILL CREATE NEW TODOS -->
-                <button type="submit" class="btn btn-primary btn-lg" ng-click="createTodo()">Add</button>
+                <button type="submit" class="btn btn-primary btn-lg" ng-click="createVisitor();" >Add</button>
+                <a href ng-click="goCats = !goCats">Toggle Cats</a>
             </form>
         </div>
     </div>
+
+</div>
+
+
+<div class="namePainting" >
+
+    <canvas id="myCanvas" ng-show="goCats"></canvas>
+    <script type="text/javascript" src="bubbles.js"></script>
+    <script type="text/javascript" src="namePainter.js"></script>
 
 </div>
 

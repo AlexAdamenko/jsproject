@@ -1,23 +1,30 @@
 {
   "name": "jsproject",
   "version": "1.0.0",
-  "description": "small js project",
-  "main": "index.js",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "e": "^0.0.4",
+    "express": "^4.13.3",
+    "nodemon": "^1.7.1",
+    "method-override": "^2.3.5",
+    "morgan": "^1.6.1",
+    "npm": "^3.3.6"
+  },
+  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AlexAdamenko/jsproject.git"
   },
-  "author": "AlexAdamenko",
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/AlexAdamenko/jsproject/issues"
   },
-  "homepage": "https://github.com/AlexAdamenko/jsproject#readme",
-  "dependencies": {
-    "express": "^4.13.3"
-    
-  }
+  "homepage": "https://github.com/AlexAdamenko/jsproject#readme"
 }
