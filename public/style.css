@@ -1,22 +1,79 @@
-.container {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-}
-
 .mainbody {
 
-    background: -webkit-linear-gradient(90deg, #304352 10%, #d7d2cc 90%); /* Chrome 10+, Saf5.1+ */
-    background:    -moz-linear-gradient(90deg, #304352 10%, #d7d2cc 90%); /* FF3.6+ */
-    background:     -ms-linear-gradient(90deg, #304352 10%, #d7d2cc 90%); /* IE10 */
-    background:      -o-linear-gradient(90deg, #304352 10%, #d7d2cc 90%); /* Opera 11.10+ */
-    background:         linear-gradient(90deg, #304352 10%, #d7d2cc 90%); /* W3C */
+
+    background: -webkit-linear-gradient(90deg, #C9FFBF 10%, #FFAFBD 90%); /* Chrome 10+, Saf5.1+ */
+    background:    -moz-linear-gradient(90deg, #C9FFBF 10%, #FFAFBD 90%); /* FF3.6+ */
+    background:     -ms-linear-gradient(90deg, #C9FFBF 10%, #FFAFBD 90%); /* IE10 */
+    background:      -o-linear-gradient(90deg, #C9FFBF 10%, #FFAFBD 90%); /* Opera 11.10+ */
+    background:         linear-gradient(90deg, #C9FFBF 10%, #FFAFBD 90%); /* W3C */
+
+    font-family: 'Lato', sans-serif;
+    color: #FDFCFB;
+    text-align: center;
+
+
 
 }
 
-.namePainting {
-
-    align-items: center;
+.input {
     display: flex;
-    justify-content: center;
+    align-items: center;
 }
+
+.button {
+    height: 46px;
+    border: none;
+}
+
+.myCanvas{
+
+
+    padding: 0;
+    margin: auto;
+    display: block;
+    width: 1000px;
+    height: 500px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+}
+
+input:focus {
+    outline: none;
+    outline: 2px solid #E86C8D;
+    box-shadow: 0 0 2px #E86C8D;
+}
+
+#submit {
+    width: 5%;
+    height: 46px;
+    background: #E86C8D;
+    font-family: inherit;
+    font-weight: bold;
+    color: inherit;
+    letter-spacing: 1px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: background .3s ease-in-out;
+}
+
+#submit:hover {
+    background: #d45d7d;
+}
+
+form {
+    width: 400px;
+    margin: 10% auto;
+}
+
+#email {
+    font-family: inherit;
+    color: #737373;
+    letter-spacing: 1px;
+    text-indent: 5%;
+    border-radius: 5px 0 0 5px;
+}
+

@@ -182,6 +182,7 @@ function bounceName() {
 }
 
 function bounceBubbles() {
+
     draw();
     update();
     setTimeout(bounceBubbles, 30);
@@ -311,6 +312,4 @@ var green = [75, 100, 40];
 var blue = [196, 77, 55];
 var purple = [280, 50, 60];
 
-setTimeout(updateCanvasDimensions, 30);/**
- * Created by alexadam on 12.10.15.
- */
+setTimeout(updateCanvasDimensions, 30);
